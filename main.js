@@ -30,10 +30,10 @@ Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzion
 
 {
     "nome" : "George",
-    "foto" : "img/avatar-1-300x300.png",
+    "foto" : "img/180-1809318_picture-300-x-300-pixel.png",
     "data" : "oggi",
     "testo" : " Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto.",
-    "immagine" : "img/543-300x300.jpg",
+    "immagine" : "img/nine-300x300-halloween-web-banners-260nw-84800977.jpg",
     "like" : "Mi piace",
     "nLike" : "piace a "
 } 
@@ -49,7 +49,7 @@ console.log(Arrposts);
     "testo" : " Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto.",
     "immagine" : "img/543-300x300.jpg",
     "like" : "Mi piace",
-    "nLike" : "piace a "
+    "nLike" : " "
 }
 ] 
 //aggiungo il nuovo membro ai posts
@@ -60,3 +60,51 @@ console.log(Arrposts);
 const {nome, foto, data, testo, immagine, like, nLike} = Arrposts;
 
 console.log(Arrposts);
+
+
+for (let i = 0; i < Arrposts.length; i++) {
+    const oggetto = Arrposts[i];
+    const nome = oggetto.nome;
+    const foto = oggetto.foto;
+    const data = oggetto.data;
+    const testo = oggetto.testo;
+    const immagine = oggetto.immagine;
+    const like = oggetto.like;
+    const nLike = oggetto.nLike;
+
+    document.querySelector(".posts-list").innerHTML += `
+    <div class="post">
+    <div class="post__header">
+        <div class="post-meta">                    
+            <div class="post-meta__icon">
+                <img class="profile-pic"${foto}/>
+                </div>
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${nome}</div>
+                    <div class="post-meta__time">${data}</div>
+                </div>                    
+            </div>
+        </div>
+        <div class="post__text">${testo}
+        <div class="post__image">
+        <img src="${immagine}" alt="">
+        <div class="post__footer">
+                <div class="likes js-likes">
+                    <div class="likes__cta">
+                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                            <span class="like-button__label">${like}</span>
+                        </a>
+                    </div>
+                    <div class="likes__counter">
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${nLike}</b> persone
+                    </div>
+                </div> 
+            </div>            
+        </div>
+    </div>
+    </div>
+                `
+}
+
+
