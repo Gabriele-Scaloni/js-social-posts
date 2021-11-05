@@ -21,7 +21,7 @@ Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzion
  var arrPosts = [
  {
     "nome" : "Luke",
-    "foto" : "img/avatar-1-300x300.png",
+    "foto" : "img/543-300x300.jpg",
     "data" : "oggi",
     "testo" : " Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto.",
     "immagine" : "img/543-300x300.jpg",
@@ -52,8 +52,7 @@ Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzion
 
 console.log(arrPosts);
 //creo un nuovo membro ai posts
- var newMember = [
-{
+const newmember = {
     "nome" : "Martin",
     "foto" : "img/avatar-1-300x300.png",
     "data" : "oggi",
@@ -62,9 +61,11 @@ console.log(arrPosts);
     "like" : "Mi piace",
     "nLike" : " "
 }
-] 
+
+
 //aggiungo il nuovo membro ai posts
-arrPosts.push(newMember)
+
+arrPosts.push(newmember)
 console.log(arrPosts);
 
 //Destructuring per prendere delle proprietà di un oggetto e inserirle in variabili
@@ -85,37 +86,44 @@ for (let i = 0; i < arrPosts.length; i++) {
 
     document.querySelector(".posts-list").innerHTML += `
     <div class="post">
-    <div class="post__header">
-        <div class="post-meta">                    
-            <div class="post-meta__icon">
-                <img class="profile-pic"${foto}/>
+        <div class="post__header">
+            <div class="post-meta">                    
+                <div class="post-meta__icon">
+                    <img class="profile-pic"${foto}/>
+                    </div>
+                    <div class="post-meta__data">
+                        <div class="post-meta__author">${nome}</div>
+                        <div class="post-meta__time">${data}</div>
+                    </div>                    
                 </div>
-                <div class="post-meta__data">
-                    <div class="post-meta__author">${nome}</div>
-                    <div class="post-meta__time">${data}</div>
-                </div>                    
+            </div>
+            <div class="post__text">${testo}
+            <div class="post__image">
+            <img src="${immagine}" alt="">
+            <div class="post__footer">
+                    <div class="likes js-likes">
+                        <div class="likes__cta">
+                            <a class="like-button  js-like-button" href="#" data-postid="1">
+                                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="like-button__label">${like}</span>
+                            </a>
+                        </div>
+                        <div class="likes__counter">
+                            Piace a <b id="like-counter-1" class="js-likes-counter">${nLike}</b> persone
+                        </div>
+                    </div> 
+                </div>            
             </div>
         </div>
-        <div class="post__text">${testo}
-        <div class="post__image">
-        <img src="${immagine}" alt="">
-        <div class="post__footer">
-                <div class="likes js-likes">
-                    <div class="likes__cta">
-                        <a class="like-button  js-like-button" href="#" data-postid="1">
-                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                            <span class="like-button__label">${like}</span>
-                        </a>
-                    </div>
-                    <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">${nLike}</b> persone
-                    </div>
-                </div> 
-            </div>            
-        </div>
-    </div>
     </div>
                 `
 }
 
+/* document.getElementById(like-counter-1) */
 
+/* function incrementa(x) {
+
+    x=x+1;
+   document.write(x);
+  }
+  <button type="button" class="button" onclick="incrementa(x)" ></button> */
