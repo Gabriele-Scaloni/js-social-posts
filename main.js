@@ -17,7 +17,8 @@ console.log() è nostro amico. :hug:
 Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzioni più piccole. */
 
 // array con informazioni base
- var Arrposts = [
+
+ var arrPosts = [
  {
     "nome" : "Luke",
     "foto" : "img/avatar-1-300x300.png",
@@ -36,10 +37,20 @@ Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzion
     "immagine" : "img/nine-300x300-halloween-web-banners-260nw-84800977.jpg",
     "like" : "Mi piace",
     "nLike" : "piace a "
+},
+
+{
+    "nome" : "George",
+    "foto" : "img/180-1809318_picture-300-x-300-pixel.png",
+    "data" : "oggi",
+    "testo" : " Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto.Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto.",
+    /* "immagine" : "img/nine-300x300-halloween-web-banners-260nw-84800977.jpg", */
+    "like" : "Mi piace",
+    "nLike" : "piace a "
 } 
 ]
 
-console.log(Arrposts);
+console.log(arrPosts);
 //creo un nuovo membro ai posts
  var newMember = [
 {
@@ -53,17 +64,17 @@ console.log(Arrposts);
 }
 ] 
 //aggiungo il nuovo membro ai posts
-Arrposts.push(newMember)
-console.log(Arrposts);
+arrPosts.push(newMember)
+console.log(arrPosts);
 
 //Destructuring per prendere delle proprietà di un oggetto e inserirle in variabili
-const {nome, foto, data, testo, immagine, like, nLike} = Arrposts;
+const {nome, foto, data, testo, immagine, like, nLike} = arrPosts;
 
-console.log(Arrposts);
+console.log(arrPosts);
 
 
-for (let i = 0; i < Arrposts.length; i++) {
-    const oggetto = Arrposts[i];
+for (let i = 0; i < arrPosts.length; i++) {
+    const oggetto = arrPosts[i];
     const nome = oggetto.nome;
     const foto = oggetto.foto;
     const data = oggetto.data;
